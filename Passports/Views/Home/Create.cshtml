@@ -1,0 +1,28 @@
+﻿@model Passports.Models.PassportData
+ 
+<h2>Добавление паспортных данных</h2>
+<form asp-action="create" asp-controller="home">
+    <p>
+        <label asp-for="Surname">Фамилия</label><br />
+        <input type="text" asp-for="Surname" />
+    </p>
+    <p>
+        <label asp-for="Name">Имя</label><br />
+        <input type="text" asp-for="Name" />
+    </p>
+    <p>
+        <label asp-for="Fathername">Отчество</label><br />
+        <input type="text" asp-for="Fathername" />
+    </p>
+    <p>
+        <label asp-for="Series">Серия</label><br />
+        <input type="number" asp-for="Series" />
+    </p>
+    <p>
+        <label asp-for="Number">Номер</label><br />
+        <input type="number" asp-for="Number" />
+    </p>
+    <p>
+        <input type="submit" value="Сохранить" />
+    </p>
+</form>

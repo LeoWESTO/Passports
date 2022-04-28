@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Passports.Models.PassportData>
+@{
+    
+}
+<h2>Список паспортов</h2>
+<p><a asp-action="Create">Добавить паспорт</a></p>
+<p><a asp-action="DowloadExcel">Скачать Excel файл</a></p>
+<table class="table">
+     <tr><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Серия</th><th>Номер</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Surname</td>
+            <td>@item.Name</td>
+            <td>@item.Fathername</td>
+            <td>@item.Series</td>
+            <td>@item.Number</td>
+            <td>
+                <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.Id">Изменить</a>
+            </td>
+            <td>
+                <form asp-controller="Home" asp-action="Delete" method="post"  asp-route-id="@item.Id">
+                    <input type="submit" value="Удалить" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>
